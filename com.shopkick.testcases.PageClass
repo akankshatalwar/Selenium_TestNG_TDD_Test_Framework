@@ -1,0 +1,87 @@
+package com.shopkick.testcases;
+
+import com.shopkick.base.BaseClass;
+import com.shopkick.page.KicksNearBySection;
+import com.shopkick.page.EarnPage;
+import org.junit.Assert;
+import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
+
+public class PageClass extends BaseClass {
+
+
+    EarnPage loginPage;
+    KicksNearBySection kicksNearBy;
+
+
+    public PageClass(){
+
+        super();
+    }
+
+
+    @BeforeTest
+    public void setUp(){
+        initialization();
+    }
+
+
+    // Verify Setting icon on the top
+    @Test
+    public void VerifySettingIcon(){
+        kicksNearBy.verifySettingIcon();
+    }
+
+    //verify if user able to see the points
+    @Test
+    public void VerifyPointsLabel(){
+        kicksNearBy.verifyPointslabel();
+    }
+
+    // Verify if user able to see the search Icon
+    @Test
+    public void VerifySearchIcon(){
+        kicksNearBy.verifySearchIcon();
+    }
+
+    // Verify if user able to see the notification Icon
+    @Test
+    public void VerifyNotificationIcon(){
+        kicksNearBy.verifyNotifictionIcon();
+    }
+
+    // Verify if user able to see Images sections in the top
+    @Test
+    public void VerifyLearnMoreSection(){
+        kicksNearBy.verifyLearnMoreImageSection();
+    }
+
+    // Verify if user able to see earn icon
+    @Test
+    public void VerifyEarnIcon(){
+        kicksNearBy.verifyearnIcon();
+    }
+
+    // Verify if user able to see discover icon
+    @Test
+    public void VerifyDiscoverIcon(){
+        kicksNearBy.verifyDiscoverIcon();
+    }
+
+    // Verify if user able to see Invite Icon
+    @Test
+    public void VerifyInviteIcon(){
+        kicksNearBy.verifyInviteIcon();
+    }
+
+    @AfterMethod
+    public void tearDown(){
+
+        driver.quit();
+    }
+
+
+
+
+}
