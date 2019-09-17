@@ -1,0 +1,78 @@
+package com.shopkick.base;
+
+import com.shopkick.util.timeoutUtil;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import static com.sun.tools.doclint.Entity.cap;
+
+public class BaseClass {
+
+    public static WebDriver driver;
+    public static Properties prop;
+    public static URL url;
+
+
+    public BaseClass() {
+
+        try {
+            prop = new Properties();
+
+            FileInputStream ip = new FileInputStream("/Users/atalw5/Documents/Automation_Workspace/axptestingtest/src/test/java/com/shopkick/test/config/config.properties");
+            prop.load(ip);
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void initialization() {
+
+        try {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability(CapabilityType.PLATFORM,"ANDROID");
+            caps.setCapability(CapabilityType.VERSION,"");
+            caps.setCapability(CapabilityType.BROWSER_NAME,"");
+            caps.setCapability(CapabilityType.BROWSER_VERSION,"");
+            caps.setCapability("deviceName","iOS6");
+            caps.setCapability("udid","");
+            caps.setCapability("appPackage","");
+            caps.setCapability("appActivity","");
+
+            URL url = new URL("https://127.0.0.1:5628/wd/hub");
+           // driver =new AppiumDriver<>(url,caps);
+           // driver= new AndroidDriver<MobileElement>(url,caps);
+        } catch (Exception e) {
+            System.out.println("Cause is:"+ e.getCause());
+            System.out.println("Massage is"+ e.getMessage());
+        }
+
+
+
+    }
+
+
+
+
+
+
+}
+
+
+
