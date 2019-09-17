@@ -1,0 +1,82 @@
+package com.shopkick.page;
+
+import com.shopkick.base.BaseClass;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class KicksNearBySection extends BaseClass {
+
+    //Page factory
+
+
+
+    @FindBy(id = "setting")
+    WebElement settingIcon;
+
+    @FindBy(id = "points")
+    WebElement pointsLabel;
+
+    @FindBy(id = "SearchIcon")
+    WebElement searchIcon;
+
+    @FindBy(xpath = "//a[contains(text(),'notification')]")
+    WebElement notificationIcon;
+
+    @FindBy(xpath = "//a[contains(text(),'lerarnmore')]")
+    WebElement learnMoreImageSection;
+
+    @FindBy(xpath = "//a[contains(text(),'NearBy')]")
+    WebElement kicksNearByLabel;
+
+    @FindBy(xpath = "//a[contains(text(),'Online')]")
+    WebElement kicksOnlineLabel;
+
+    @FindBy(xpath = "//a[contains(text(),'earn')]")
+    WebElement earnIcon;
+
+    @FindBy(xpath = "//a[contains(text(),'discover')]")
+    WebElement discoverIcon;
+
+    @FindBy(xpath = "//a[contains(text(),'invite')]")
+    WebElement inviteIcon;
+
+    public KicksNearBySection() {
+
+        PageFactory.initElements(driver, this);
+    }
+
+   public void verifySettingIcon() {
+        Assert.assertTrue("Setting icon is not displayed", settingIcon.isDisplayed());
+    }
+
+    public void verifyPointslabel() {
+        Assert.assertTrue("Points are not displayed", pointsLabel.isDisplayed());
+    }
+
+    public void verifySearchIcon() {
+        Assert.assertTrue("Search icon is not displayed", searchIcon.isDisplayed());
+    }
+
+    public void verifyNotifictionIcon() {
+        Assert.assertTrue("Notification icon is not displayed", notificationIcon.isDisplayed());
+    }
+
+    public void verifyLearnMoreImageSection() {
+        Assert.assertTrue("Image section is not displayed", learnMoreImageSection.isDisplayed());
+    }
+
+    public void verifyearnIcon() {
+        Assert.assertTrue("Earn icon is not displayed", earnIcon.isDisplayed());
+    }
+    public void verifyDiscoverIcon() {
+        Assert.assertTrue("Discover icon is not displayed", discoverIcon.isDisplayed());
+    }
+
+    public void verifyInviteIcon() {
+        Assert.assertTrue("Invite icon is not displayed", inviteIcon.isDisplayed());
+    }
+}
+
+
